@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Dashboard Application
+
+This is a weather dashboard application built with Next.js and Firebase Authentication. It allows users to sign in using GitHub and view weather information for Calgary.
+
+## Features
+
+- GitHub Authentication using Firebase
+- Weather information fetched from an open-source API
+- Responsive design using Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, clone the repo to your local machine and install the required dependencies.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js
+- npm or yarn
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
+    ```bash
+    git clone <Link to this repository>
+    ```
 
-## Learn More
+2. Navigate to the project directory:
+    ```bash
+    cd your-repo
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Install the required dependencies:
+    ```bash
+    npm install
+    ```
+    
+### Live Demo
+https://weather-dash-board-9zwc.vercel.app/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Environment Variables
 
-## Deploy on Vercel
+Create a `.env.local` file in the root directory and add the following environment variables:
+    
+    ```env
+    NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
+    NEXT_PUBLIC_FIREBASE_APP_ID=your-firebase-app-id
+    ```
+Replace `your-firebase-...` with your actual Firebase configuration values.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To run the application in development mode, execute:
+    
+    ```bash
+    npm run dev
+    ```
+The application will be available at `http://localhost:3000`.
+
+## Usage
+
+To use the application, sign in using your GitHub account and view the weather information for Calgary.
+
+## Deployment
+
+To deploy the application, you can use Vercel, Netlify, or any other platform that supports Next.js.
+
+## Built With
+
+- [Next.js](https://nextjs.org/)
+- [Firebase](https://firebase.google.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenMeteo API](https://open-meteo.com/)
+
+
