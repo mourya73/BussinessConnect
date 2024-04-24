@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // Import 'getAuth' function for Firebase authentication.
 // This is used to initialize the authentication service.
 import { getAuth } from "firebase/auth";
-
+import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
 
 // Firebase configuration object containing keys and identifiers for your app.
@@ -29,3 +29,5 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 export const db = getFirestore(app);
+
+export const storage = getStorage(app);

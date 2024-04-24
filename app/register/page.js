@@ -2,19 +2,23 @@
 
 import { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../firebase'; 
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { db, storage } from '../firebase'; // Ensure these are correctly exported from your firebase config
 
 export default function Register() {
+  // State for business data and image file
   const [businessData, setBusinessData] = useState({
     businessName: '',
     description: '',
     address: '',
     phone: '',
   });
+  const [file, setFile] = useState(null); // State for storing the file
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+  // Update state on input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBusinessData((prevData) => ({
@@ -23,25 +27,53 @@ export default function Register() {
     }));
   };
 
+  // Update state on file input change
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]); // Set the file
+  };
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     setSuccess('');
 
+    let imageURL = '';
+
+    // First, upload the image if a file has been selected
+    if (file) {
+      const fileRef = ref(storage, `businesses/${file.name}`);
+      try {
+        const fileSnapshot = await uploadBytes(fileRef, file);
+        imageURL = await getDownloadURL(fileSnapshot.ref);
+      } catch (uploadError) {
+        setError('Failed to upload image. Please try again.');
+        setLoading(false);
+        return;
+      }
+    }
+
+    // Then, create the business record with the image URL
     try {
-      const docRef = await addDoc(collection(db, 'businesses'), businessData);
+      const docRef = await addDoc(collection(db, 'businesses'), {
+        ...businessData,
+        imageURL, // Include the image URL in the document
+      });
       setSuccess(`Business registered with ID: ${docRef.id}`);
+      // Reset form and file input
       setBusinessData({
         businessName: '',
         description: '',
         address: '',
         phone: '',
       });
+      setFile(null);
     } catch (err) {
       setError('Error registering business. Please try again.');
       console.error('Error adding document: ', err);
     }
+
     setLoading(false);
   };
 
@@ -66,6 +98,7 @@ export default function Register() {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             placeholder="Enter business name"
           />
+          
         </div>
 
         <div>
@@ -113,6 +146,19 @@ export default function Register() {
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             placeholder="Business phone number"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="image" className="block text-sm font-medium text-gray-700">
+            Business Image
+          </label>
+          <input
+            type="file"
+            name="image"
+            id="image"
+            onChange={handleFileChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           />
         </div>
 

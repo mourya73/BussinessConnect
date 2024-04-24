@@ -9,6 +9,7 @@ export default function Page() {
   // TODO: Implement handleSignIn and handleSignOut functions using gitHubSignIn and firebaseSignOut from useUserAuth
   const handleSignIn = () => {
     gitHubSignIn().catch(error => console.error("Error signing in:", error));
+    
   };
 
   const handleSignOut = () => {
@@ -23,7 +24,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Welcome to Bussiness Connect, {user.displayName}!</h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/home">
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition ease-in-out duration-150">View Weather</button>
+            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition ease-in-out duration-150">Home</button>
           </Link>
           <button
             onClick={handleSignOut}
@@ -31,6 +32,9 @@ export default function Page() {
           >
             Sign Out
           </button>
+          <Link href="/register">
+            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition ease-in-out duration-150">Register</button>
+          </Link>
         </div>
       </>
     ) : (
