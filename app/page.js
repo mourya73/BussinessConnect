@@ -22,7 +22,7 @@ export default function Page() {
       <>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Welcome to Bussiness Connect, {user.displayName}!</h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/weather">
+          <Link href="/home">
             <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition ease-in-out duration-150">View Weather</button>
           </Link>
           <button
