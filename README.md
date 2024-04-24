@@ -1,79 +1,59 @@
-# Weather Dashboard Application
+BusinessConnect
 
-This is a weather dashboard application built with Next.js and Firebase Authentication. It allows users to sign in using GitHub and view weather information for Calgary.
+# Description
 
-## Features
+BusinessConnect is a web platform designed to connect local businesses with potential customers within their community. It allows businesses to register, showcase their services, and be discovered through category or location-based searches.
 
-- GitHub Authentication using Firebase
-- Weather information fetched from an open-source API
-- Responsive design using Tailwind CSS
+# Installation
 
-## Getting Started
+To get a local copy up and running follow these simple steps:
 
-To get started with this project, clone the repo to your local machine and install the required dependencies.
+1. 1\. Clone the repository:
 
-### Prerequisites
+- git clone <https://github.com/your-username/your-project-name.git>
 
-- Node.js
-- npm or yarn
+1. 2\. Install NPM packages:
 
-### Installation
+- npm install
 
-1. Clone the repository:
-    ```bash
-    git clone <Link to this repository>
-    ```
+1. 3\. Configure your environment variables in \`.env\`:
 
-2. Navigate to the project directory:
-    ```bash
-    cd your-repo
-    ```
+- NEXT_PUBLIC_FIREBASE_API_KEY="your_firebase_api_key"  
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="your_firebase_auth_domain"  
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID="your_firebase_project_id"  
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="your_firebase_storage_bucket"  
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="your_firebase_messaging_sender_id"  
+    NEXT_PUBLIC_FIREBASE_APP_ID="your_firebase_app_id"
 
-3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
-    
-### Live Demo
-https://weather-dash-board-9zwc.vercel.app/
+# Usage
 
+To run the project:
 
-### Environment Variables
+- npm run dev
+- Navigate to \`<http://localhost:3000\`> to view the app.
 
-Create a `.env.local` file in the root directory and add the following environment variables:
-    
-    ```env
-    NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
-    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
-    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
-    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
-    NEXT_PUBLIC_FIREBASE_APP_ID=your-firebase-app-id
-    ```
-Replace `your-firebase-...` with your actual Firebase configuration values.
+# Contributing
 
-### Running the Application
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are \*\*greatly appreciated\*\*.
 
-To run the application in development mode, execute:
-    
-    ```bash
-    npm run dev
-    ```
-The application will be available at `http://localhost:3000`.
+1. 1\. Fork the Project
+2. 2\. Create your Feature Branch (\`git checkout -b feature/AmazingFeature\`)
+3. 3\. Commit your Changes (\`git commit -m 'Add some AmazingFeature'\`)
+4. 4\. Push to the Branch (\`git push origin feature/AmazingFeature\`)
+5. 5\. Open a Pull Request
 
-## Usage
+# License
 
-To use the application, sign in using your GitHub account and view the weather information for Calgary.
+Distributed under the MIT License. See \`LICENSE\` for more information.
 
-## Deployment
+# Contact
 
-To deploy the application, you can use Vercel, Netlify, or any other platform that supports Next.js.
+Your Name - <email@example.com>
 
-## Built With
+# Acknowledgments
 
-- [Next.js](https://nextjs.org/)
-- [Firebase](https://firebase.google.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [OpenMeteo API](https://open-meteo.com/)
+\- Firebase
 
+\- Next.js
 
+\- Tailwind CSS
