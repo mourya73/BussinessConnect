@@ -48,7 +48,7 @@ Distributed under the MIT License. See \`LICENSE\` for more information.
 
 # Contact
 
-Your Name - <email@example.com>
+Mourya Shah- mshah3173@gmail.com
 
 # Acknowledgments
 
