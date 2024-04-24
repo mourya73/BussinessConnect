@@ -35,7 +35,7 @@ export default function Page() {
       </>
     ) : (
       <div className="text-center">
-        <p className="text-lg text-gray-800 mb-4">Please sign in to access the weather information.</p>
+        <p className="text-lg text-gray-800 mb-4">Please sign in to access Bussiness Connect.</p>
         <button
           onClick={handleSignIn}
           className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition ease-in-out duration-150"

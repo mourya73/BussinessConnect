@@ -5,6 +5,8 @@ import { initializeApp } from "firebase/app";
 // This is used to initialize the authentication service.
 import { getAuth } from "firebase/auth";
 
+import { getFirestore } from 'firebase/firestore';
+
 // Firebase configuration object containing keys and identifiers for your app.
 // This includes API key, auth domain, project ID, storage bucket, messaging sender ID, and app ID.
 // These values are stored in environment variables to keep them secure and not hard-coded into the source code.
@@ -25,3 +27,5 @@ const app = initializeApp(firebaseConfig);
 // Initializing Firebase authentication service and exporting it.
 // 'auth' is an instance of Firebase Auth service, used for handling user authentication.
 export const auth = getAuth(app);
+
+export const db = getFirestore(app);
